@@ -511,7 +511,8 @@ int do_cmdline(int argc, char **argv, int do_everything,
     }
   }
 
-  cmdline_arg_list_free(arglist);
+  if(!do_everything)
+    cmdline_arg_list_free(arglist);
 
   return err;
 }
